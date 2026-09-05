@@ -1,113 +1,33 @@
-Enterprise-Bench — Enterprise AI Agent Evaluation
+Intent: put this harness + model on the leaderboard
 
-Overview
+Your name / handle: kartikey varshney 
+Contact: varshneykartikey600@gmail.com
 
-Enterprise-Bench is an open benchmark designed to evaluate how reliably AI agents can work with realistic enterprise data at production scale.
+## Harness
 
-The benchmark focuses on a key problem with enterprise AI agents:
+- **Harness / framework:** Goose
+- **Link (repo or docs):** https://github.com/block/goose
+- **Runs on Harbor?** To be confirmed with maintainers
 
-«An agent may be capable of reasoning correctly, but still fail when it has to retrieve the right information from large, distributed, permission-sensitive enterprise systems.»
+## Model
 
-Enterprise-Bench evaluates agents across precision, efficiency, and safety, rather than measuring answer correctness alone.
+- **LLM you want evaluated:** GLM-5.2
+- **Access:** API
 
-This repository contains the L1–L2 Enterprise-Bench suite, covering reactive data retrieval and analytical reasoning.
+## Why this combination
 
----
+I would like to see Goose + GLM-5.2 evaluated on Enterprise-Bench.
 
-🎯 Objective
+Goose provides an agentic coding harness with a different execution and tool-use approach from the harnesses already represented in the benchmark. Evaluating it with GLM-5.2 would provide another useful harness/model data point and help compare how the same model performs across different agent architectures.
 
-The primary objective is to measure whether an AI agent can:
+## What you'd like help with
 
-- Retrieve the correct information from enterprise systems.
-- Combine information across multiple data sources.
-- Apply business rules correctly.
-- Reason over large volumes of operational data.
-- Avoid unnecessary retrieval and computation.
-- Respect access and permission boundaries.
-- Produce verifiable and reliable answers.
-- Maintain performance as enterprise data grows.
+- [x] Nothing — I just want it on the roadmap
 
----
+## Checklist
 
-🧠 Autonomy Framework
-
-Enterprise-Bench categorizes agent capabilities into four levels:
-
-Level| Name| Description
-L1| Reactive| Deterministic retrieval from one or multiple systems
-L2| Analytical| Multi-step reasoning, synthesis and business-rule application
-L3| Strategic| Proactive coordination and conflict resolution
-L4| Autonomous| Extended self-directed planning and operation
-
-The current benchmark focuses on L1 and L2.
-
-L1 — Reactive
-
-The agent performs deterministic operations where the answer can be objectively verified.
-
-Examples:
-
-- Finding open tickets.
-- Counting tickets per account.
-- Joining accounts with engineering issues.
-- Retrieving information across multiple enterprise systems.
-
-L2 — Analytical
-
-The agent must perform reasoning and synthesis.
-
-Examples:
-
-- Determining revenue at risk.
-- Identifying what is blocking a sales opportunity.
-- Summarizing account health.
-- Applying SLA rules.
-- Extracting unresolved commitments from call transcripts.
-
----
-
-🏢 Enterprise Dataset
-
-The benchmark uses a synthetic company called Maple Payments, a mid-market B2B payments platform.
-
-The dataset represents several years of accumulated enterprise operational data.
-
-Dataset Size
-
-System| Data| Approximate Size
-Support / CRM| Tickets, Accounts, Contacts| 32,768 tickets
-Engineering| Issues, Components, Sprints| 8,448 issues
-Sales / CRM| Opportunities, Contacts| 8,704 opportunities
-Knowledge| Transcripts, Articles, Documents| 3 transcripts + 22 articles
-
-The dataset contains:
-
-- 42 accounts
-- 40 product components
-- 51 open tickets
-- 20 high-priority engineering issues
-- 30 active opportunities
-
-The data is synthetic and is intended specifically for benchmarking AI agents.
-
----
-
-🔗 Cross-System Reasoning
-
-One of the most important aspects of Enterprise-Bench is the relationship between different enterprise systems.
-
-For example:
-
-Account
-   │
-   ├── Support Tickets
-   │
-   ├── Sales Opportunities
-   │
-   └── Product Component
-          │
-          └── Engineering Issues
-
+- [x] I added a single entry under "intents/" (no benchmark run required to open this PR)
+- [x] I'm open to the maintainers reaching out to help with setup
 An agent may need to follow these relationships to answer a seemingly simple business question.
 
 For example:
